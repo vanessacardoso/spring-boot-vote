@@ -1,4 +1,4 @@
-# spring-boot-vote
+# Spring Boot Vote
 Projeto backend que gerencia sessões de votação.
 
 ## Funcionalidades
