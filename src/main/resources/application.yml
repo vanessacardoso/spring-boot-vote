@@ -9,3 +9,12 @@ spring:
     datasource:
     username: sa
     password:
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 60000
+        loggerLevel: full
+

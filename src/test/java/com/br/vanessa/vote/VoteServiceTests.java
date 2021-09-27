@@ -1,5 +1,6 @@
 package com.br.vanessa.vote;
 
+import com.br.vanessa.vote.client.ConsultUserInfoService;
 import com.br.vanessa.vote.model.Vote;
 import com.br.vanessa.vote.model.VoteEnum;
 import com.br.vanessa.vote.repository.VoteRepository;
@@ -22,10 +23,12 @@ public class VoteServiceTests {
 
     private VoteService voteService;
 
+    private ConsultUserInfoService consultUserInfoService;
+
     @BeforeEach
     public void setup() {
         openMocks(this);
-        voteService = new VoteService(voteRepository);
+        voteService = new VoteService(voteRepository, consultUserInfoService);
     }
 
     @Nested

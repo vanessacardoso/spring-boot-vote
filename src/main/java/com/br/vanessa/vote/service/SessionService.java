@@ -9,6 +9,8 @@ import com.br.vanessa.vote.model.VoteEnum;
 import com.br.vanessa.vote.repository.GuidelineRepository;
 import com.br.vanessa.vote.repository.SessionRepository;
 import com.br.vanessa.vote.repository.VoteRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -21,6 +23,7 @@ public class SessionService {
     private final GuidelineRepository guidelineRepository;
     private final VoteRepository voteRepository;
     public static final int TIME_DEFAULT = 1;
+    private static final Logger logger = LoggerFactory.getLogger(SessionService.class);
 
     public SessionService(SessionRepository sessionRepository, GuidelineRepository guidelineRepository, VoteRepository voteRepository) {
         this.sessionRepository = sessionRepository;
@@ -28,7 +31,7 @@ public class SessionService {
         this.voteRepository = voteRepository;
     }
 
-    public Session create(SessionRequest request)  {
+    public Session create(SessionRequest request) {
         LocalDateTime startDateNow = LocalDateTime.now();
         if (request.getTimeDuration() == null) {
             return defaultTimeSession(request, startDateNow);
@@ -37,7 +40,7 @@ public class SessionService {
         }
     }
 
-    public Session defaultTimeSession(SessionRequest request, LocalDateTime startDateNow)  {
+    public Session defaultTimeSession(SessionRequest request, LocalDateTime startDateNow) {
         Guideline guideline = existsGuidelineById(request.getIdGuideline());
         Session sessionSet = Session.builder()
                 .idGuideline(guideline)
@@ -57,8 +60,9 @@ public class SessionService {
         return sessionRepository.save(sessionSet);
     }
 
-    public Guideline existsGuidelineById(Long idGuideline)  {
+    public Guideline existsGuidelineById(Long idGuideline) {
         Optional<Guideline> guideline = guidelineRepository.findById(idGuideline);
+        logger.info("Searching for an guideline id");
         return guideline.orElseThrow(GuidelineNotFound::new);
     }
 
