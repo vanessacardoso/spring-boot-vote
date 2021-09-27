@@ -31,3 +31,5 @@ Informações sobre as tecnologias usada na aplicação:
 * Aumentar a cobertura de testes unitários
 * Melhorar o tratamento de erros 
 * Implementar Builder para seguir o padrão do projeto sem usar o lombok
+* Adicionar relacionamento no model Vote
+* Implementar validação de apenas um voto por usuário
