@@ -86,6 +86,13 @@ public class Session {
         this.timeSession = timeSession;
     }
 
+    public Session(Long id, Guideline idGuideline, LocalDateTime startSession, LocalDateTime endSession) {
+        this.id = id;
+        this.idGuideline = idGuideline;
+        this.startSession = startSession;
+        this.endSession = endSession;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -103,7 +110,7 @@ public class Session {
     public String toString() {
         return "Session{" +
                 "id=" + id +
-                ", idPauta=" + idGuideline +
+                ", idGuideline=" + idGuideline +
                 ", startSession=" + startSession +
                 ", endSession=" + endSession +
                 ", timeSession=" + timeSession +

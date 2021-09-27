@@ -2,12 +2,17 @@ package com.br.vanessa.vote.controller.response;
 
 import com.br.vanessa.vote.model.Vote;
 import com.br.vanessa.vote.model.VoteEnum;
+import io.swagger.annotations.ApiModelProperty;
 
 public class VoteResponse {
 
+    @ApiModelProperty(example = "Identificador único da pauta")
     private Long idVote;
+    @ApiModelProperty(example = "Identificador único da sessão")
     private Long idSession;
+    @ApiModelProperty(example = "Identificador do tipo CPF do usuário")
     private String cpf;
+    @ApiModelProperty(example = "Opção de voto")
     private VoteEnum vote;
 
     public VoteResponse(Vote vote) {

@@ -33,6 +33,20 @@ public class Vote {
         this.vote = request.getVote();
     }
 
+    //Should for test unit
+    public Vote(Long id, Long idSession, String cpf, VoteEnum vote) {
+        this.id = id;
+        this.idSession = idSession;
+        this.cpf = cpf;
+        this.vote = vote;
+    }
+    //Should for test unit
+    public Vote(Long idSession, String cpf, VoteEnum vote) {
+        this.idSession = idSession;
+        this.cpf = cpf;
+        this.vote = vote;
+    }
+
     public Long getId() {
         return id;
     }

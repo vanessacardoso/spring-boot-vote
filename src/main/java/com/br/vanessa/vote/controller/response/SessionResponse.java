@@ -1,14 +1,19 @@
 package com.br.vanessa.vote.controller.response;
 
 import com.br.vanessa.vote.model.Session;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.time.LocalDateTime;
 
 public class SessionResponse {
 
+    @ApiModelProperty(example = "Identificador único da sessão")
     private Long idSession;
+    @ApiModelProperty(example = "Identificador único da pauta")
     private Long idGuideline;
+    @ApiModelProperty(example = "2021-09-25T23:19:19.4050134")
     private LocalDateTime startSession;
+    @ApiModelProperty(example = "2021-09-25T23:20:19.4050134")
     private LocalDateTime endSession;
 
     public SessionResponse(Session session) {

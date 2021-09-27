@@ -24,12 +24,25 @@ public class Guideline {
     @Column
     private String description;
 
+    public Guideline() {
+    }
+
     public Guideline(GuidelineRequest request) {
         this.title = request.getTitle();
         this.description = request.getDescription();
     }
 
-    public Guideline() {
+    //Should for test unit
+    public Guideline(Long id, String title, String description) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+    }
+
+    //Should for test unit
+    public Guideline(String title, String description) {
+        this.title = title;
+        this.description = description;
     }
 
     public Long getId() {

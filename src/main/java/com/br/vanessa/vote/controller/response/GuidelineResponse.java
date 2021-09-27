@@ -1,11 +1,15 @@
 package com.br.vanessa.vote.controller.response;
 
 import com.br.vanessa.vote.model.Guideline;
+import io.swagger.annotations.ApiModelProperty;
 
 public class GuidelineResponse {
 
+    @ApiModelProperty(example = "1")
     private Long id;
+    @ApiModelProperty(example = "Nome da pauta")
     private String title;
+    @ApiModelProperty(example = "Descrição da pauta")
     private String description;
 
     public GuidelineResponse(Guideline guideline) {
