@@ -25,6 +25,7 @@ Informações sobre as tecnologias usada na aplicação:
 * Swagger - Springfox
 * Mockito
 * Junit
+* Slf4j
 
 ## TODO
 * Aumentar a cobertura de testes unitários
